@@ -1,2 +1,8 @@
 https://sulin1122.github.io/
 https://sulin1122.github.io/1.html
+https://sulin1122.github.io/projects/personal-website.html
+https://sulin1122.github.io/projects/javascript-todo.html
+https://sulin1122.github.io/projects/visual-experiments.html
+https://sulin1122.github.io/notes/localstorage-todo.html
+https://sulin1122.github.io/notes/responsive-grid.html
+https://sulin1122.github.io/notes/orbit-gallery.html

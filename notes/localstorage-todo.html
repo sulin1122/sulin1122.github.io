@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <title>JavaScript 待办清单如何用 localStorage 保存数据｜苏林 SULIN</title>
+  <meta name="description" content="结合苏林的待办清单源码，记录用 localStorage 保存任务、刷新后恢复数据、校验存储内容与处理读写失败的方法，并说明本地存储的使用边界。">
+  <meta name="author" content="苏林">
+  <link rel="canonical" href="https://sulin1122.github.io/notes/localstorage-todo.html">
+  <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css?v=20261030-seo">
+  <link rel="stylesheet" href="../content.css?v=20261030-seo">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="苏林 SULIN">
+  <meta property="og:title" content="JavaScript 待办清单如何用 localStorage 保存数据｜苏林 SULIN">
+  <meta property="og:description" content="结合苏林的待办清单源码，记录用 localStorage 保存任务、刷新后恢复数据、校验存储内容与处理读写失败的方法，并说明本地存储的使用边界。">
+  <meta property="og:url" content="https://sulin1122.github.io/notes/localstorage-todo.html">
+  <meta property="og:image" content="https://sulin1122.github.io/images/portfolio-social.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JavaScript 待办清单如何用 localStorage 保存数据｜苏林 SULIN">
+  <meta name="twitter:description" content="结合苏林的待办清单源码，记录用 localStorage 保存任务、刷新后恢复数据、校验存储内容与处理读写失败的方法，并说明本地存储的使用边界。">
+  <meta name="twitter:image" content="https://sulin1122.github.io/images/portfolio-social.png">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://sulin1122.github.io/notes/localstorage-todo.html#page",
+      "url": "https://sulin1122.github.io/notes/localstorage-todo.html",
+      "name": "JavaScript 待办清单如何用 localStorage 保存数据",
+      "headline": "JavaScript 待办清单如何用 localStorage 保存数据",
+      "description": "结合苏林的待办清单源码，记录用 localStorage 保存任务、刷新后恢复数据、校验存储内容与处理读写失败的方法，并说明本地存储的使用边界。",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@type": "Person",
+        "@id": "https://sulin1122.github.io/#person",
+        "name": "苏林",
+        "url": "https://sulin1122.github.io/"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://sulin1122.github.io/#website",
+        "name": "苏林 SULIN",
+        "url": "https://sulin1122.github.io/"
+      },
+      "datePublished": "2026-10-31",
+      "dateModified": "2026-10-31"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "苏林 SULIN",
+          "item": "https://sulin1122.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "实践笔记",
+          "item": "https://sulin1122.github.io/#notes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JavaScript 待办清单如何用 localStorage 保存数据",
+          "item": "https://sulin1122.github.io/notes/localstorage-todo.html"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="content-page" id="top">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header article-header">
+    <a class="wordmark" href="../" aria-label="苏林 SULIN 首页">SU<span class="logo-star" aria-hidden="true">✳</span>LIN<span class="wordmark-cn">苏林</span></a>
+    <nav class="article-nav" aria-label="主要导航"><a href="../#projects">精选作品</a><a href="../#notes">实践笔记</a><a href="../#about">关于苏林</a></nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="article-heading">
+        <nav class="breadcrumbs" aria-label="当前位置"><ol><li><a href="../">首页</a></li><li><a href="../#notes">实践笔记</a></li><li aria-current="page">JavaScript 待办清单如何用 localStorage 保存数据</li></ol></nav>
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> 01 / FRONT-END NOTES</p>
+        <h1>JavaScript 待办清单如何用 localStorage 保存数据</h1>
+        <p class="article-lead">任务添加成功后，刷新页面还应该看得到。这篇笔记结合本站待办清单，记录浏览器本地保存、恢复与异常提示的实现。</p>
+        <div class="article-meta"><span>苏林 SULIN</span><span>实践笔记</span><time datetime="2026-10-31">2026-10-31</time></div>
+        <div class="article-tags"><span>JavaScript</span><span>localStorage</span><span>JSON</span><span>数据校验</span></div>
+
+      </header>
+
+      <div class="article-layout">
+        <aside class="article-toc"><nav aria-label="本页目录"><p>本页内容</p><ol><li><a href="#section-1">先区分任务数据与当前视图</a></li><li><a href="#section-2">保存：把任务数组转成字符串</a></li><li><a href="#section-3">恢复：解析之后还要检查内容</a></li><li><a href="#section-4">显示输入与处理失败</a></li><li><a href="#section-5">localStorage 的边界</a></li><li><a href="#section-6">体验与继续阅读</a></li></ol></nav></aside>
+        <div class="article-body"><section id="section-1"><h2>先区分任务数据与当前视图</h2><p>待办清单把任务保存在 <code>tasks</code> 数组中；分类、完成状态和搜索词只决定当前显示哪些任务。这样切换筛选时不会把未显示的任务从存储中移除。</p><p>每项任务包含编号、文字、完成状态和分类。本站用 <code>sulin.tasks.v2</code> 作为存储键名，使清单数据与页面动态偏好等其他设置分开。</p></section>
+<section id="section-2"><h2>保存：把任务数组转成字符串</h2><p><code>localStorage</code> 存储字符串，因此保存前使用 <code>JSON.stringify()</code>。下面是项目中保存函数的核心写法：</p><pre><code class="language-javascript">function save() {
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(tasks));
+    storageOK = true;
+  } catch {
+    storageOK = false;
+  }
+  byId(&#x27;storage-state&#x27;).textContent = storageOK
+    ? &#x27;自动保存在当前浏览器&#x27;
+    : &#x27;当前无法保存，刷新后任务会清空&#x27;;
+}</code></pre><p>任务添加、编辑、完成、删除和撤销后都会调用保存函数。筛选与搜索只改变显示，不需要重新保存任务数据。</p></section>
+<section id="section-3"><h2>恢复：解析之后还要检查内容</h2><p>页面启动时读取字符串，缺少保存记录时以空数组开始。JSON 解析可能失败，解析成功的值也不一定具有正确的任务结构。</p><pre><code class="language-javascript">const stored = JSON.parse(
+  localStorage.getItem(storageKey) || &#x27;[]&#x27;
+);
+
+if (Array.isArray(stored)) {
+  // 项目中继续检查字段、文字长度与重复编号。
+}</code></pre><p>完整源码会检查编号和文字类型，过滤空文字与重复编号，最多恢复 500 项任务，并把不认识的分类归入学习。读取存储不会自动执行其中的文字。</p></section>
+<section id="section-4"><h2>显示输入与处理失败</h2><p>页面通过 <code>textContent</code> 显示任务文字，而不是把输入拼接成 HTML。保存内容也需要与新输入一样谨慎处理，不能因为来自本地存储就直接信任。</p><p>浏览器可能限制存储访问，写入也可能失败，因此读取和写入分别捕获异常，并在界面上显示当前保存状态。用户仍可操作清单，但需要知道哪些内容尚未成功保存。</p></section>
+<section id="section-5"><h2>localStorage 的边界</h2><p>数据属于当前站点的来源，并保存在当前浏览器中。它不是云端账户，不提供跨设备同步；清理站点数据也可能移除任务。同一浏览器其他标签页的更新，目前通过提示刷新来处理。</p><p>本文讨论的是小型个人工具的存储方式。它不替代备份、账户系统或并发数据同步。</p></section>
+<section id="section-6"><h2>体验与继续阅读</h2><p><a href="../1.html">打开待办清单进行体验</a>，或 <a href="../projects/javascript-todo.html">阅读完整的 JavaScript 待办清单案例</a>。实现源码位于 <a href="https://github.com/sulin1122/sulin1122.github.io/blob/main/todo.js">todo.js</a>。</p><p>API 行为可参考 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API">MDN：使用 Web Storage API</a>。</p></section></div>
+      </div>
+    </article>
+    <section class="related-section" aria-labelledby="related-title"><p class="eyebrow">KEEP EXPLORING</p><h2 id="related-title">继续看看</h2><div class="related-grid"><a class="related-card" href="../projects/javascript-todo.html"><span>项目案例</span><h3>原生 JavaScript 待办清单：搜索、筛选与本地保存</h3><span aria-hidden="true">↗</span></a><a class="related-card" href="../notes/responsive-grid.html"><span>实践笔记</span><h3>用 CSS Grid 实现手机与桌面自适应的作品列表</h3><span aria-hidden="true">↗</span></a><a class="related-card" href="../notes/orbit-gallery.html"><span>实践笔记</span><h3>JavaScript 环形作品画廊：定位、旋转与暂停控制</h3><span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><a class="wordmark" href="../">SU<span aria-hidden="true">✳</span>LIN</a><p>© 2026 苏林 · 用好奇心与代码构建</p><a href="#top" class="back-top">回到顶部 ↑</a></footer>
+</body>
+</html>

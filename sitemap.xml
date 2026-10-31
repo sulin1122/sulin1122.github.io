@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url>
-    <loc>https://sulin1122.github.io/</loc>
-    <lastmod>2026-10-29</lastmod>
-    <image:image><image:loc>https://sulin1122.github.io/images/portfolio-preview.png</image:loc></image:image>
-    <image:image><image:loc>https://sulin1122.github.io/images/todo-preview.png</image:loc></image:image>
+  <url><loc>https://sulin1122.github.io/</loc><lastmod>2026-10-31</lastmod>
+    <image:image><image:loc>https://sulin1122.github.io/images/creative-hero-1672.webp</image:loc></image:image>
   </url>
-  <url><loc>https://sulin1122.github.io/1.html</loc><lastmod>2026-10-29</lastmod></url>
+  <url><loc>https://sulin1122.github.io/1.html</loc><lastmod>2026-10-31</lastmod>
+  </url>
+  <url><loc>https://sulin1122.github.io/projects/personal-website.html</loc><lastmod>2026-10-31</lastmod>
+  </url>
+  <url><loc>https://sulin1122.github.io/projects/javascript-todo.html</loc><lastmod>2026-10-31</lastmod>
+  </url>
+  <url><loc>https://sulin1122.github.io/projects/visual-experiments.html</loc><lastmod>2026-10-31</lastmod>
+  </url>
+  <url><loc>https://sulin1122.github.io/notes/localstorage-todo.html</loc><lastmod>2026-10-31</lastmod>
+  </url>
+  <url><loc>https://sulin1122.github.io/notes/responsive-grid.html</loc><lastmod>2026-10-31</lastmod>
+  </url>
+  <url><loc>https://sulin1122.github.io/notes/orbit-gallery.html</loc><lastmod>2026-10-31</lastmod>
+  </url>
 </urlset>

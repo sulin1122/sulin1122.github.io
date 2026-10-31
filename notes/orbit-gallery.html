@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <title>JavaScript 环形作品画廊：定位、旋转与暂停控制｜苏林 SULIN</title>
+  <meta name="description" content="记录苏林作品集环形画廊的实现：三角函数定位卡片、CSS transform、requestAnimationFrame 旋转、悬停和键盘暂停，以及手机横向滑动布局。">
+  <meta name="author" content="苏林">
+  <link rel="canonical" href="https://sulin1122.github.io/notes/orbit-gallery.html">
+  <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css?v=20261030-seo">
+  <link rel="stylesheet" href="../content.css?v=20261030-seo">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="苏林 SULIN">
+  <meta property="og:title" content="JavaScript 环形作品画廊：定位、旋转与暂停控制｜苏林 SULIN">
+  <meta property="og:description" content="记录苏林作品集环形画廊的实现：三角函数定位卡片、CSS transform、requestAnimationFrame 旋转、悬停和键盘暂停，以及手机横向滑动布局。">
+  <meta property="og:url" content="https://sulin1122.github.io/notes/orbit-gallery.html">
+  <meta property="og:image" content="https://sulin1122.github.io/images/portfolio-social.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JavaScript 环形作品画廊：定位、旋转与暂停控制｜苏林 SULIN">
+  <meta name="twitter:description" content="记录苏林作品集环形画廊的实现：三角函数定位卡片、CSS transform、requestAnimationFrame 旋转、悬停和键盘暂停，以及手机横向滑动布局。">
+  <meta name="twitter:image" content="https://sulin1122.github.io/images/portfolio-social.png">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://sulin1122.github.io/notes/orbit-gallery.html#page",
+      "url": "https://sulin1122.github.io/notes/orbit-gallery.html",
+      "name": "JavaScript 环形作品画廊：定位、旋转与暂停控制",
+      "headline": "JavaScript 环形作品画廊：定位、旋转与暂停控制",
+      "description": "记录苏林作品集环形画廊的实现：三角函数定位卡片、CSS transform、requestAnimationFrame 旋转、悬停和键盘暂停，以及手机横向滑动布局。",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@type": "Person",
+        "@id": "https://sulin1122.github.io/#person",
+        "name": "苏林",
+        "url": "https://sulin1122.github.io/"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://sulin1122.github.io/#website",
+        "name": "苏林 SULIN",
+        "url": "https://sulin1122.github.io/"
+      },
+      "datePublished": "2026-10-31",
+      "dateModified": "2026-10-31"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "苏林 SULIN",
+          "item": "https://sulin1122.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "实践笔记",
+          "item": "https://sulin1122.github.io/#notes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JavaScript 环形作品画廊：定位、旋转与暂停控制",
+          "item": "https://sulin1122.github.io/notes/orbit-gallery.html"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="content-page" id="top">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header article-header">
+    <a class="wordmark" href="../" aria-label="苏林 SULIN 首页">SU<span class="logo-star" aria-hidden="true">✳</span>LIN<span class="wordmark-cn">苏林</span></a>
+    <nav class="article-nav" aria-label="主要导航"><a href="../#projects">精选作品</a><a href="../#notes">实践笔记</a><a href="../#about">关于苏林</a></nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="article-heading">
+        <nav class="breadcrumbs" aria-label="当前位置"><ol><li><a href="../">首页</a></li><li><a href="../#notes">实践笔记</a></li><li aria-current="page">JavaScript 环形作品画廊：定位、旋转与暂停控制</li></ol></nav>
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> 03 / FRONT-END NOTES</p>
+        <h1><span class="article-title-line">JavaScript 环形作品画廊：</span><span class="article-title-line">定位、旋转与暂停控制</span></h1>
+        <p class="article-lead">环形画廊的重点除了让卡片动起来，还包括让访问者停得住、看得清，并能在手机上继续使用。</p>
+        <div class="article-meta"><span>苏林 SULIN</span><span>实践笔记</span><time datetime="2026-10-31">2026-10-31</time></div>
+        <div class="article-tags"><span>JavaScript</span><span>CSS transform</span><span>requestAnimationFrame</span><span>减少动态效果</span></div>
+
+      </header>
+
+      <div class="article-layout">
+        <aside class="article-toc"><nav aria-label="本页目录"><p>本页内容</p><ol><li><a href="#section-1">把卡片均匀分配到椭圆轨道</a></li><li><a href="#section-2">用时间差推进旋转角度</a></li><li><a href="#section-3">为指针、键盘和主动暂停分别处理</a></li><li><a href="#section-4">尊重减少动态效果的偏好</a></li><li><a href="#section-5">手机上切换为横向卡片列表</a></li><li><a href="#section-6">体验、源码与参考</a></li></ol></nav></aside>
+        <div class="article-body"><section id="section-1"><h2>把卡片均匀分配到椭圆轨道</h2><p>画廊先确定中心位置，再使用横向半径和纵向半径形成椭圆。每张卡片分配一个角度，角度由卡片编号和当前旋转角共同决定。</p><pre><code class="language-javascript">const angle = index / orbitCards.length * Math.PI * 2 + orbitAngle;
+const x = Math.cos(angle) * rx;
+const y = Math.sin(angle) * ry;
+const tilt = Math.sin(angle * 1.7) * 8;
+
+card.style.transform =
+  `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${tilt}deg)`;</code></pre><p>卡片自身保持绝对定位，平移和倾斜交给 <code>transform</code>。窗口尺寸变化时重新计算轨道半径。</p></section>
+<section id="section-2"><h2>用时间差推进旋转角度</h2><p><code>requestAnimationFrame</code> 提供下一帧回调。项目根据相邻帧的时间差推进角度，并限制单次时间差，避免切换回页面时突然跳过很长一段轨道。</p><p>更新位置之前，还会检查画廊是否可见、页面是否处于前台、是否为桌面布局，以及当前有没有暂停。循环可以继续等待下一帧，卡片位置则只在需要运动时变化。</p></section>
+<section id="section-3"><h2>为指针、键盘和主动暂停分别处理</h2><p>指针进入画廊时暂停，离开后根据其他状态决定是否继续；键盘焦点进入画廊也会暂停。画廊中间的控制按钮提供明确的暂停和恢复操作，并同步更新 <code>aria-pressed</code> 与按钮文字。</p><p>快速预览弹窗关闭后，焦点回到打开它的卡片。这样用户可以继续检查其他作品，不必重新寻找浏览位置。</p></section>
+<section id="section-4"><h2>尊重减少动态效果的偏好</h2><p>页面读取 <code>prefers-reduced-motion: reduce</code>，为偏好减少动画的访客暂停动态。顶部动态按钮也可以主动控制页面，选择结果保存在当前浏览器。</p><p>暂停时仍可浏览项目卡片、阅读摘要与打开独立案例页。内容与导航不依赖持续运动。</p></section>
+<section id="section-5"><h2>手机上切换为横向卡片列表</h2><p>当屏幕不超过 760px 时，JavaScript 不再更新卡片的环形 transform；CSS 将卡片放入横向 Flex 列表，并使用 <code>overflow-x: auto</code> 与 Scroll Snap 提供滑动对齐。</p><p>此时每张卡片有固定的阅读宽度，用户直接左右滑动选择作品。详情内容继续通过案例链接访问。</p></section>
+<section id="section-6"><h2>体验、源码与参考</h2><p><a href="../#works">返回首页体验环形作品画廊</a>，或 <a href="../projects/visual-experiments.html">阅读网页视觉与动效实验案例</a>。实现位于 <a href="https://github.com/sulin1122/sulin1122.github.io/blob/main/myScript.js">myScript.js</a>。</p><p>动画调度与动态偏好可参考 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame">MDN：requestAnimationFrame</a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-reduced-motion">MDN：prefers-reduced-motion</a>。</p></section></div>
+      </div>
+    </article>
+    <section class="related-section" aria-labelledby="related-title"><p class="eyebrow">KEEP EXPLORING</p><h2 id="related-title">继续看看</h2><div class="related-grid"><a class="related-card" href="../projects/visual-experiments.html"><span>项目案例</span><h3>网页视觉与动效实验：环形作品墙、字体与色彩</h3><span aria-hidden="true">↗</span></a><a class="related-card" href="../projects/personal-website.html"><span>项目案例</span><h3>响应式个人作品集网站：从页面结构到交互动效</h3><span aria-hidden="true">↗</span></a><a class="related-card" href="../notes/responsive-grid.html"><span>实践笔记</span><h3>用 CSS Grid 实现手机与桌面自适应的作品列表</h3><span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><a class="wordmark" href="../">SU<span aria-hidden="true">✳</span>LIN</a><p>© 2026 苏林 · 用好奇心与代码构建</p><a href="#top" class="back-top">回到顶部 ↑</a></footer>
+</body>
+</html>

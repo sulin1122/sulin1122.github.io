@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <title>原生 JavaScript 待办清单：搜索、筛选与本地保存｜苏林 SULIN</title>
+  <meta name="description" content="查看苏林的原生 JavaScript 待办清单案例，了解任务添加、编辑、分类搜索、状态筛选、localStorage 本地保存与撤销删除的实现，并在线体验。">
+  <meta name="author" content="苏林">
+  <link rel="canonical" href="https://sulin1122.github.io/projects/javascript-todo.html">
+  <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css?v=20261030-seo">
+  <link rel="stylesheet" href="../content.css?v=20261030-seo">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="苏林 SULIN">
+  <meta property="og:title" content="原生 JavaScript 待办清单：搜索、筛选与本地保存｜苏林 SULIN">
+  <meta property="og:description" content="查看苏林的原生 JavaScript 待办清单案例，了解任务添加、编辑、分类搜索、状态筛选、localStorage 本地保存与撤销删除的实现，并在线体验。">
+  <meta property="og:url" content="https://sulin1122.github.io/projects/javascript-todo.html">
+  <meta property="og:image" content="https://sulin1122.github.io/images/portfolio-social.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="原生 JavaScript 待办清单：搜索、筛选与本地保存｜苏林 SULIN">
+  <meta name="twitter:description" content="查看苏林的原生 JavaScript 待办清单案例，了解任务添加、编辑、分类搜索、状态筛选、localStorage 本地保存与撤销删除的实现，并在线体验。">
+  <meta name="twitter:image" content="https://sulin1122.github.io/images/portfolio-social.png">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sulin1122.github.io/projects/javascript-todo.html#page",
+      "url": "https://sulin1122.github.io/projects/javascript-todo.html",
+      "name": "原生 JavaScript 待办清单：搜索、筛选与本地保存",
+      "headline": "原生 JavaScript 待办清单：搜索、筛选与本地保存",
+      "description": "查看苏林的原生 JavaScript 待办清单案例，了解任务添加、编辑、分类搜索、状态筛选、localStorage 本地保存与撤销删除的实现，并在线体验。",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@type": "Person",
+        "@id": "https://sulin1122.github.io/#person",
+        "name": "苏林",
+        "url": "https://sulin1122.github.io/"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://sulin1122.github.io/#website",
+        "name": "苏林 SULIN",
+        "url": "https://sulin1122.github.io/"
+      },
+      "datePublished": "2026-10-31",
+      "dateModified": "2026-10-31",
+      "image": "https://sulin1122.github.io/images/todo-preview-1280.webp"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "苏林 SULIN",
+          "item": "https://sulin1122.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "项目案例",
+          "item": "https://sulin1122.github.io/#projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "原生 JavaScript 待办清单：搜索、筛选与本地保存",
+          "item": "https://sulin1122.github.io/projects/javascript-todo.html"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="content-page" id="top">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header article-header">
+    <a class="wordmark" href="../" aria-label="苏林 SULIN 首页">SU<span class="logo-star" aria-hidden="true">✳</span>LIN<span class="wordmark-cn">苏林</span></a>
+    <nav class="article-nav" aria-label="主要导航"><a href="../#projects">精选作品</a><a href="../#notes">实践笔记</a><a href="../#about">关于苏林</a></nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="article-heading">
+        <nav class="breadcrumbs" aria-label="当前位置"><ol><li><a href="../">首页</a></li><li><a href="../#projects">项目案例</a></li><li aria-current="page">原生 JavaScript 待办清单：搜索、筛选与本地保存</li></ol></nav>
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> 02 / SELECTED PROJECT</p>
+        <h1><span class="article-title-line">原生 JavaScript 待办清单：</span><span class="article-title-line">搜索、筛选与本地保存</span></h1>
+        <p class="article-lead">把想做的事写下来，再一步步完成。这是一个用原生 JavaScript 制作的网页待办清单，也是练习 DOM、事件与浏览器存储的小项目。</p>
+        <div class="article-meta"><span>苏林 SULIN</span><span>项目案例</span><time datetime="2026-10-31">2026-10-31</time></div>
+        <div class="article-tags"><span>JavaScript</span><span>DOM 事件</span><span>localStorage</span><span>任务筛选</span></div>
+        <a class="pill-button" href="../1.html">体验 JavaScript 待办清单 ↗</a>
+      </header>
+      <figure class="article-cover"><img src="../images/todo-preview-1280.webp" srcset="../images/todo-preview-640.webp 640w, ../images/todo-preview-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 1120px" width="1280" height="800" alt="JavaScript 待办清单的界面演示，截图中的任务为示例" decoding="async" fetchpriority="high"><figcaption>JavaScript 待办清单的界面演示，截图中的任务为示例</figcaption></figure>
+      <div class="article-layout">
+        <aside class="article-toc"><nav aria-label="本页目录"><p>本页内容</p><ol><li><a href="#section-1">可以直接体验哪些功能</a></li><li><a href="#section-2">用任务数组驱动页面更新</a></li><li><a href="#section-3">组合分类、状态与搜索条件</a></li><li><a href="#section-4">在当前浏览器保存和恢复任务</a></li><li><a href="#section-5">编辑、删除与撤销如何衔接</a></li><li><a href="#section-6">使用边界与项目源码</a></li></ol></nav></aside>
+        <div class="article-body"><section id="section-1"><h2>可以直接体验哪些功能</h2><p><a href="../1.html">打开 JavaScript 待办清单</a>，添加一项任务，选择学习、项目或生活分类，再尝试完成、搜索和编辑。清单同时提供全部、待完成和已完成状态筛选，以及任务数量和完成进度。</p><p>编辑可以通过按钮或双击任务文字进入，Enter 保存，Escape 取消；输入中文时会检查组合输入状态，避免回车选词意外提交。删除后会显示撤销入口，保留 12 秒恢复机会。</p></section>
+<section id="section-2"><h2>用任务数组驱动页面更新</h2><p>任务使用 <code>id</code>、<code>text</code>、<code>done</code> 和 <code>category</code> 四个字段表示。任务数组保存数据，状态筛选、分类筛选和搜索词分别保存当前视图条件，<code>render()</code> 根据这些数据更新列表与计数。</p><pre><code class="language-javascript">{
+  id: &#x27;task-example&#x27;,
+  text: &#x27;完成作品集的手机布局检查&#x27;,
+  done: false,
+  category: &#x27;project&#x27;
+}</code></pre><p>页面使用 <code>createElement</code> 和 <code>textContent</code> 显示访客输入，任务文字作为文本呈现。编辑、勾选完成和删除都会先更新数据，再刷新显示。</p></section>
+<section id="section-3"><h2>组合分类、状态与搜索条件</h2><p>筛选时三个条件同时生效：任务是否属于当前完成状态、是否属于当前分类，以及任务文字是否包含搜索词。搜索会去掉首尾空白并统一大小写，让英文词也可以自然匹配。</p><pre><code class="language-javascript">const visible = tasks.filter(task =&gt;
+  (stateFilter === &#x27;all&#x27; ||
+    (stateFilter === &#x27;done&#x27; ? task.done : !task.done)) &amp;&amp;
+  (categoryFilter === &#x27;all&#x27; || task.category === categoryFilter) &amp;&amp;
+  task.text.toLocaleLowerCase().includes(search)
+);</code></pre><p>条件没有匹配结果时显示空状态，用户可以继续切换筛选条件。添加新任务后会重置筛选，让刚添加的内容立即可见。</p></section>
+<section id="section-4"><h2>在当前浏览器保存和恢复任务</h2><p>本项目使用键名 <code>sulin.tasks.v2</code>，通过 <code>JSON.stringify()</code> 保存任务数组，在重新打开页面时读取和解析。读取结果还会检查字段类型、文字长度和重复编号，避免直接信任已保存的数据。</p><p>存储读取和写入都放在 <code>try...catch</code> 中；浏览器禁止存储或空间不足时，页面会给出提示。更详细的处理见 <a href="../notes/localstorage-todo.html">localStorage 保存待办事项实践笔记</a>。</p></section>
+<section id="section-5"><h2>编辑、删除与撤销如何衔接</h2><p>删除前会记录任务的内容和原始位置。点击撤销后，把任务插回原来的位置，再保存并重新渲染。撤销窗口结束后，暂存记录会被清除。</p><p>同一浏览器的其他标签页更新清单时，页面会提醒刷新查看。当前实现没有自动合并并发修改。</p></section>
+<section id="section-6"><h2>使用边界与项目源码</h2><p>任务只保存在当前站点、当前浏览器的本地存储中，没有上传服务器，也不提供登录、跨设备同步或数据备份。清理站点数据可能移除已保存的任务。</p><p>当前任务上限为 500 项，每项最多 120 个字符。<a href="../1.html">在线体验待办清单</a>，或 <a href="https://github.com/sulin1122/sulin1122.github.io/blob/main/todo.js">阅读 todo.js 项目源码</a>。</p></section></div>
+      </div>
+    </article>
+    <section class="related-section" aria-labelledby="related-title"><p class="eyebrow">KEEP EXPLORING</p><h2 id="related-title">继续看看</h2><div class="related-grid"><a class="related-card" href="../notes/localstorage-todo.html"><span>实践笔记</span><h3>JavaScript 待办清单如何用 localStorage 保存数据</h3><span aria-hidden="true">↗</span></a><a class="related-card" href="../projects/personal-website.html"><span>项目案例</span><h3>响应式个人作品集网站：从页面结构到交互动效</h3><span aria-hidden="true">↗</span></a><a class="related-card" href="../notes/responsive-grid.html"><span>实践笔记</span><h3>用 CSS Grid 实现手机与桌面自适应的作品列表</h3><span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><a class="wordmark" href="../">SU<span aria-hidden="true">✳</span>LIN</a><p>© 2026 苏林 · 用好奇心与代码构建</p><a href="#top" class="back-top">回到顶部 ↑</a></footer>
+</body>
+</html>

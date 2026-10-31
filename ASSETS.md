@@ -15,3 +15,7 @@ Use case: stylized-concept. Asset type: cinematic widescreen hero image for Su L
 ## 最终男生版本编辑提示词
 
 Edit this website hero image: replace the female-looking character with a clearly MALE young-adult 3D character, around 24 years old. Masculine angular facial structure, broad defined jaw, strong eyebrows, slightly broader nose, no makeup, no feminine eyelashes, subtly confident friendly gaze. Keep copper-red curly hair but give him a shorter sculptural curly hairstyle with some volume on top. Keep the dark round glasses, cobalt-blue ribbed turtleneck, olive oversized jacket, premium stylized 3D collectible figure material, orange rim light and black studio backdrop. Preserve the exact widescreen editorial composition with the male character on the RIGHT HALF and the LEFT 45% clean almost-black negative space. Preserve lighting quality, texture detail, overall visual mood, camera angle and all other elements. No typography, logos, watermarks or extra objects. Make gender clearly read as male.
+
+## 网页图片派生文件
+
+2026-10-30 从现有 PNG 生成多尺寸 WebP，用于首屏、作品封面与详情页。派生文件保留原有构图，文件名中的数字表示像素宽度；原始素材继续保留。`portfolio-preview` 的截图表现改版前的页面，详情页将其标为页面预览，不作为当前性能或搜索结果的证明。

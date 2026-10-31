@@ -4,29 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101010">
-  <title>苏林 SULIN — 让想法动起来｜前端学习与创意作品集</title>
-  <meta name="description" content="你好，我是苏林。这里是我的前端学习与创意实验空间：探索 HTML、CSS、JavaScript，展示个人网站、交互待办清单与视觉练习。">
+  <title>苏林 SULIN｜前端学习与创意作品集</title>
+  <meta name="description" content="你好，我是苏林。这里展示我的前端学习与创意实践，包括响应式个人网站、JavaScript 待办清单、CSS 动效与视觉排版实验。浏览作品、体验交互，并查看项目源码。">
   <meta name="author" content="苏林">
   <link rel="canonical" href="https://sulin1122.github.io/">
   <link rel="icon" href="./images/logo.svg" type="image/svg+xml">
   <link rel="icon" href="./favicon.ico">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_CN">
-  <meta property="og:site_name" content="SULIN — 苏林的创意空间">
-  <meta property="og:title" content="苏林 SULIN — 让想法动起来">
-  <meta property="og:description" content="前端学习、网页作品与视觉实验。每一个小小的想法，都值得被认真实现。">
+  <meta property="og:site_name" content="苏林 SULIN">
+  <meta property="og:title" content="苏林 SULIN｜前端学习与创意作品集">
+  <meta property="og:description" content="你好，我是苏林。这里展示我的前端学习与创意实践，包括响应式个人网站、JavaScript 待办清单、CSS 动效与视觉排版实验。浏览作品、体验交互，并查看项目源码。">
   <meta property="og:url" content="https://sulin1122.github.io/">
   <meta property="og:image" content="https://sulin1122.github.io/images/portfolio-social.png">
   <meta property="og:image:alt" content="苏林创意作品集，黑色首屏与原创红发 3D 人物">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="苏林 SULIN — 让想法动起来">
-  <meta name="twitter:description" content="前端学习、网页作品与视觉实验。">
+  <meta name="twitter:title" content="苏林 SULIN｜前端学习与创意作品集">
+  <meta name="twitter:description" content="你好，我是苏林。这里展示我的前端学习与创意实践，包括响应式个人网站、JavaScript 待办清单、CSS 动效与视觉排版实验。浏览作品、体验交互，并查看项目源码。">
   <meta name="twitter:image" content="https://sulin1122.github.io/images/portfolio-social.png">
-  <link rel="preload" as="image" href="./images/creative-hero.png" fetchpriority="high">
-  <link rel="stylesheet" href="./style.css">
-  <script src="./myScript.js" defer></script>
+  <link rel="preload" as="image" href="./images/creative-hero-1672.webp" imagesrcset="./images/creative-hero-640.webp 640w, ./images/creative-hero-1100.webp 1100w, ./images/creative-hero-1672.webp 1672w" imagesizes="(max-width: 760px) 127vw, 100vw" fetchpriority="high">
+  <link rel="stylesheet" href="./style.css?v=20261030-seo">
+  <script src="./myScript.js?v=20261030-seo" defer></script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfilePage","url":"https://sulin1122.github.io/","name":"苏林 SULIN — 前端学习与创意作品集","inLanguage":"zh-CN","mainEntity":{"@type":"Person","name":"苏林","identifier":"sulin1122","url":"https://sulin1122.github.io/","sameAs":["https://github.com/sulin1122"]}}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://sulin1122.github.io/#website",
+      "url": "https://sulin1122.github.io/",
+      "name": "苏林 SULIN",
+      "alternateName": [
+        "SULIN",
+        "苏林的创意空间"
+      ],
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sulin1122.github.io/#person",
+      "name": "苏林",
+      "identifier": "sulin1122",
+      "url": "https://sulin1122.github.io/",
+      "sameAs": [
+        "https://github.com/sulin1122"
+      ]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://sulin1122.github.io/#profile",
+      "url": "https://sulin1122.github.io/",
+      "name": "苏林 SULIN｜前端学习与创意作品集",
+      "inLanguage": "zh-CN",
+      "mainEntity": {
+        "@id": "https://sulin1122.github.io/#person"
+      },
+      "isPartOf": {
+        "@id": "https://sulin1122.github.io/#website"
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -35,52 +73,68 @@
   <header class="site-header" id="top">
     <a class="wordmark" href="#top" aria-label="苏林，返回首页">SU<span class="logo-star" aria-hidden="true">✳</span>LIN<span class="wordmark-cn">苏林</span></a>
     <nav class="main-nav" id="main-nav" aria-label="主要导航">
-      <a href="#works">作品 <span>WORK</span></a><a href="#about">关于 <span>ABOUT</span></a><a href="#contact">交流 <span>CONTACT ↗</span></a>
+      <a href="#works">作品 <span>WORK</span></a><a href="#notes">笔记 <span>NOTES</span></a><a href="#about">关于 <span>ABOUT</span></a><a href="#contact">交流 <span>CONTACT ↗</span></a>
     </nav>
     <div class="header-actions"><button class="motion-toggle" type="button" aria-pressed="false" title="暂停页面动态"><span class="motion-symbol" aria-hidden="true">Ⅱ</span><span class="motion-label">暂停动态</span></button><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="打开导航"><span></span><span></span></button></div>
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-art" aria-hidden="true"><img src="./images/creative-hero.png" width="1672" height="941" alt="" fetchpriority="high"></div><div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-art" aria-hidden="true"><img src="./images/creative-hero-1672.webp" srcset="./images/creative-hero-640.webp 640w, ./images/creative-hero-1100.webp 1100w, ./images/creative-hero-1672.webp 1672w" sizes="(max-width: 760px) 127vw, 100vw" decoding="async" width="1672" height="941" alt="" fetchpriority="high"></div><div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-kicker"><span>INDEPENDENT MIND.<br>CURIOUS BY NATURE.</span><span class="hero-edition">PERSONAL PORTFOLIO<br>VOL. 2026 / CHINA</span></div>
-      <div class="hero-copy"><p class="eyebrow"><span class="live-dot"></span> 苏林的前端与创意实验室</p><h1 id="hero-title">IDEAS<br>IN <span class="outline-word">MOTION</span><sup>✳</sup></h1><div class="hero-intro"><p>把想法，写成看得见的作品。<br><span>你好，我是苏林。一边学习代码，一边探索有趣的网页。</span></p><a href="#works" class="round-link" aria-label="向下探索我的作品"><span aria-hidden="true">↘</span></a></div></div>
+      <div class="hero-copy"><p class="eyebrow"><span class="live-dot"></span> SULIN / IDEAS IN MOTION</p><h1 id="hero-title">苏林的前端学习<br>与<span class="outline-word">创意作品集</span><sup aria-hidden="true">✳</sup></h1><div class="hero-intro"><p>把想法，写成看得见的作品。<br><span>你好，我是苏林，正在通过真实项目学习 HTML、CSS 与 JavaScript。这里展示响应式个人网站、交互待办清单与网页视觉实验。</span></p><a href="#works" class="round-link" aria-label="向下探索我的作品"><span aria-hidden="true">↘</span></a></div></div>
       <div class="hero-sticker" aria-hidden="true"><span>MAKE<br>IT REAL.</span><span>✳</span></div>
       <a class="hero-preview" href="./1.html"><div class="preview-art"><span class="preview-task"><i></i>MAKE SOMETHING</span><span class="preview-task checked"><i>✓</i>START TODAY</span><span class="preview-number">01.</span></div><span>INTERACTIVE EXPERIMENT <strong>待办清单 ↗</strong></span></a>
       <div class="hero-bottom"><span>CREATIVE CODING / WEB EXPLORATION</span><a href="#works"><span class="scroll-line" aria-hidden="true"></span> SCROLL TO EXPLORE</a><span class="hero-coordinate">少一点设限，多一点创造。</span></div>
     </section>
     <section class="collection section-light" id="works" aria-labelledby="collection-title">
       <div class="section-meta"><span>01 / SELECTED EXPLORATIONS</span><span>IDEAS, CODE & A LITTLE CURIOSITY.</span><span>2026 COLLECTION</span></div>
-      <div class="collection-heading reveal"><p class="eyebrow">灵感没有固定形状</p><h2 id="collection-title">好奇心，<em>永不下线。</em></h2><p class="section-description">网页、交互与视觉，在这里相遇。<br>点击一张卡片，看看想法背后的故事。</p></div>
+      <div class="collection-heading reveal"><p class="eyebrow">灵感没有固定形状</p><h2 id="collection-title">网页视觉，<em>与交互实验。</em></h2><p class="section-description">网页、交互与视觉，在这里相遇。<br>点击一张卡片，看看想法背后的故事。</p></div>
       <div class="orbit-stage" aria-label="互动作品与灵感环形画廊"><div class="orbit-cards">
-        <button class="orbit-card art-character" type="button" data-case="visual" aria-label="查看原创 3D 主视觉"><img src="./images/creative-hero.png" alt="原创红发 3D 人物视觉" loading="lazy" width="1672" height="941"><span>01 / VISUAL EXPLORATION</span></button>
-        <button class="orbit-card art-type" type="button" data-case="site" aria-label="查看个人网站项目"><span class="poster-caption">A PERSONAL EXPERIMENT</span><strong>CODE.<br>CREATE.<br>REPEAT.</strong><span class="poster-mark">↗</span><span>02 / CREATIVE CODING</span></button>
-        <button class="orbit-card art-image" type="button" data-case="todo" aria-label="查看待办清单项目"><img src="./images/todo-preview.png" alt="待办清单项目界面预览" loading="lazy" width="1280" height="800"><span>03 / SMALL TOOL, BIG FOCUS</span></button>
-        <button class="orbit-card art-image" type="button" data-case="reference" aria-label="查看排版参考素材"><img src="./images/brochure-reference.webp" alt="深绿色宣传册排版参考" loading="lazy" width="640" height="714"><span>04 / LAYOUT REFERENCE</span></button>
-        <button class="orbit-card art-code" type="button" data-case="site" aria-label="查看网页结构练习"><span class="poster-caption">FROM ZERO TO SOMETHING</span><strong>&lt;/&gt;</strong><span class="code-caption">HELLO, WORLD.<br>HELLO, POSSIBILITIES.</span><span>05 / FRONT-END LEARNING</span></button>
-        <button class="orbit-card art-image" type="button" data-case="site" aria-label="查看个人主页预览"><img src="./images/portfolio-preview.png" alt="个人作品集首页预览" loading="lazy" width="1265" height="791"><span>06 / MY LITTLE CORNER</span></button>
-        <button class="orbit-card art-image" type="button" data-case="reference" aria-label="查看作品集封面参考"><img src="./images/portfolio-reference.webp" alt="米白色作品集封面排版参考" loading="lazy" width="640" height="427"><span>07 / EDITORIAL REFERENCE</span></button>
-        <button class="orbit-card art-character detail-crop" type="button" data-case="visual" aria-label="查看主视觉细节"><img src="./images/creative-hero.png" alt="原创人物头发与材质的细节" loading="lazy" width="1672" height="941"><span>08 / IT'S ALL IN THE DETAILS</span></button>
-        <button class="orbit-card art-focus" type="button" data-case="todo" aria-label="体验我的待办清单"><span class="poster-caption">ONE THING AT A TIME.</span><strong>LESS<br>NOISE.<br>MORE<br>FOCUS.</strong><span>09 / INTERACTIVE WEB</span></button>
-        <button class="orbit-card art-name" type="button" data-case="visual" aria-label="查看视觉与字体探索"><span class="poster-caption">MAKE ROOM FOR IDEAS.</span><strong>SU<br>LIN<span>✳</span></strong><span>10 / TYPE & PLAY</span></button>
+        <a class="orbit-card art-character" href="./projects/visual-experiments.html" data-case="visual" aria-label="查看原创 3D 主视觉"><img src="./images/creative-hero-1672.webp" srcset="./images/creative-hero-640.webp 640w, ./images/creative-hero-1100.webp 1100w, ./images/creative-hero-1672.webp 1672w" sizes="(max-width: 760px) 145px, 166px" decoding="async" alt="原创红发 3D 人物视觉" loading="lazy" width="1672" height="941"><span>01 / VISUAL EXPLORATION</span></a>
+        <a class="orbit-card art-type" href="./projects/personal-website.html" data-case="site" aria-label="查看个人网站项目"><span class="poster-caption">A PERSONAL EXPERIMENT</span><strong>CODE.<br>CREATE.<br>REPEAT.</strong><span class="poster-mark">↗</span><span>02 / CREATIVE CODING</span></a>
+        <a class="orbit-card art-image" href="./projects/javascript-todo.html" data-case="todo" aria-label="查看待办清单项目"><img src="./images/todo-preview-1280.webp" srcset="./images/todo-preview-640.webp 640w, ./images/todo-preview-1280.webp 1280w" sizes="(max-width: 760px) 145px, 166px" decoding="async" alt="待办清单项目界面预览" loading="lazy" width="1280" height="800"><span>03 / SMALL TOOL, BIG FOCUS</span></a>
+        <a class="orbit-card art-image" href="./projects/visual-experiments.html#section-2" data-case="reference" aria-label="查看排版参考素材"><img src="./images/brochure-reference.webp" alt="深绿色宣传册排版参考" loading="lazy" width="640" height="714"><span>04 / LAYOUT REFERENCE</span></a>
+        <a class="orbit-card art-code" href="./projects/personal-website.html" data-case="site" aria-label="查看网页结构练习"><span class="poster-caption">FROM ZERO TO SOMETHING</span><strong>&lt;/&gt;</strong><span class="code-caption">HELLO, WORLD.<br>HELLO, POSSIBILITIES.</span><span>05 / FRONT-END LEARNING</span></a>
+        <a class="orbit-card art-image" href="./projects/personal-website.html" data-case="site" aria-label="查看个人主页预览"><img src="./images/portfolio-preview-1265.webp" srcset="./images/portfolio-preview-640.webp 640w, ./images/portfolio-preview-1265.webp 1265w" sizes="(max-width: 760px) 145px, 166px" decoding="async" alt="个人作品集首页预览" loading="lazy" width="1265" height="791"><span>06 / MY LITTLE CORNER</span></a>
+        <a class="orbit-card art-image" href="./projects/visual-experiments.html#section-2" data-case="reference" aria-label="查看作品集封面参考"><img src="./images/portfolio-reference.webp" alt="米白色作品集封面排版参考" loading="lazy" width="640" height="427"><span>07 / EDITORIAL REFERENCE</span></a>
+        <a class="orbit-card art-character detail-crop" href="./projects/visual-experiments.html" data-case="visual" aria-label="查看主视觉细节"><img src="./images/creative-hero-1672.webp" srcset="./images/creative-hero-640.webp 640w, ./images/creative-hero-1100.webp 1100w, ./images/creative-hero-1672.webp 1672w" sizes="(max-width: 760px) 145px, 166px" decoding="async" alt="原创人物头发与材质的细节" loading="lazy" width="1672" height="941"><span>08 / IT'S ALL IN THE DETAILS</span></a>
+        <a class="orbit-card art-focus" href="./projects/javascript-todo.html" data-case="todo" aria-label="体验我的待办清单"><span class="poster-caption">ONE THING AT A TIME.</span><strong>LESS<br>NOISE.<br>MORE<br>FOCUS.</strong><span>09 / INTERACTIVE WEB</span></a>
+        <a class="orbit-card art-name" href="./projects/visual-experiments.html" data-case="visual" aria-label="查看视觉与字体探索"><span class="poster-caption">MAKE ROOM FOR IDEAS.</span><strong>SU<br>LIN<span>✳</span></strong><span>10 / TYPE & PLAY</span></a>
       </div><div class="orbit-center"><span class="orbit-small-label">AN EVER-EVOLVING COLLECTION</span><span class="orbit-center-title">STAY<br><em>CURIOUS.</em></span><button class="orbit-control" type="button" aria-pressed="false"><span class="orbit-control-icon" aria-hidden="true">Ⅱ</span><span class="orbit-control-label">暂停作品环绕</span></button><span class="orbit-hint">悬停暂停 · 点击探索</span></div></div>
       <div class="collection-bottom"><span>EXCLUSIVE LITTLE EXPERIMENTS</span><span>持续更新，始终好奇。<span class="accent-dot">●</span></span></div>
     </section>
-    <section class="projects section-light" aria-labelledby="projects-title">
-      <div class="projects-header reveal"><div><p class="eyebrow">每一个作品，都是一次出发</p><h2 id="projects-title">SELECTED <em>WORK.</em><sup>(03)</sup></h2></div><div class="project-filters" role="group" aria-label="筛选作品"><button class="is-active" type="button" data-filter="all" aria-pressed="true">全部 <span>03</span></button><button type="button" data-filter="web" aria-pressed="false">网页开发 <span>02</span></button><button type="button" data-filter="visual" aria-pressed="false">视觉探索 <span>01</span></button></div></div>
+    <section class="projects section-light" id="projects" aria-labelledby="projects-title">
+      <div class="projects-header reveal"><div><p class="eyebrow">每一个作品，都是一次出发</p><h2 id="projects-title">精选前端<em>作品。</em><sup>(03)</sup></h2></div><div class="project-filters" role="group" aria-label="筛选作品"><button class="is-active" type="button" data-filter="all" aria-pressed="true">全部 <span>03</span></button><button type="button" data-filter="web" aria-pressed="false">网页开发 <span>02</span></button><button type="button" data-filter="visual" aria-pressed="false">视觉探索 <span>01</span></button></div></div>
       <p class="sr-only" id="filter-status" aria-live="polite">显示全部 3 个作品</p>
       <div class="project-grid">
-        <article class="project-card reveal" data-category="web" id="personal-site"><button class="project-cover cover-site" type="button" data-case="site" aria-label="查看个人网站项目详情"><span class="cover-topline">01 / PERSONAL SPACE <span>↗</span></span><div class="browser-mock"><div class="browser-bar"><i></i><i></i><i></i><span>sulin1122.github.io</span></div><img src="./images/portfolio-preview.png" alt="个人作品集网站实际页面" loading="lazy" width="1265" height="791"></div><span class="cover-label">A LITTLE SPACE. A LOT OF IDEAS.</span></button><div class="project-caption"><div><h3>我的个人空间 <span>↗</span></h3><p>响应式作品集 · 交互动效 · 个人表达</p></div><span class="project-year">2026</span></div><div class="project-actions"><button class="text-link" type="button" data-case="site">项目故事 ↗</button><a class="text-link" href="https://github.com/sulin1122/sulin1122.github.io" target="_blank" rel="noopener noreferrer">GitHub 源码 ↗</a></div></article>
-        <article class="project-card reveal" data-category="web" id="todo-project"><button class="project-cover cover-todo" type="button" data-case="todo" aria-label="查看交互待办清单详情"><span class="cover-topline">02 / DAILY FOCUS <span>↗</span></span><div class="todo-cover-heading">Make room<br>for <em>what matters.</em></div><div class="mini-todo"><div><span class="mini-check done">✓</span><span class="mini-done">从一个小想法开始</span><small>01</small></div><div><span class="mini-check"></span><span>把今天过得更有条理</span><small>02</small></div><div><span class="mini-check"></span><span>给好奇心留点时间</span><small>03</small></div><span class="mini-todo-footer">LESS NOISE. MORE FOCUS. <span>＋</span></span></div><span class="cover-label">JAVASCRIPT / A USEFUL LITTLE EXPERIMENT</span></button><div class="project-caption"><div><h3>把今天，安排明白 <span>↗</span></h3><p>交互待办清单 · 任务筛选 · 本地保存</p></div><span class="project-year">2026</span></div><div class="project-actions"><a class="text-link" href="./1.html">立即体验 ↗</a><button class="text-link" type="button" data-case="todo">项目故事 ↗</button></div></article>
-        <article class="project-card project-wide reveal" data-category="visual"><button class="project-cover cover-visual" type="button" data-case="visual" aria-label="查看视觉实验详情"><div><span class="cover-topline">03 / VISUAL PLAYGROUND</span><strong>PLAY IS<br><em>THE PROCESS.</em></strong><span class="cover-label">字体、色彩与一场关于想象力的实验。</span></div><div class="visual-star" aria-hidden="true">✳</div><span class="visual-open" aria-hidden="true">↗</span></button><div class="project-caption"><div><h3>视觉游乐场 <span>↗</span></h3><p>原创 AI 辅助主视觉 · 字体与动态排版练习</p></div><span class="project-year">2026</span></div></article>
+        <article class="project-card reveal" data-category="web" id="personal-site"><a class="project-cover cover-site" href="./projects/personal-website.html" aria-label="查看个人网站项目详情"><span class="cover-topline">01 / PERSONAL SPACE <span>↗</span></span><div class="browser-mock"><div class="browser-bar"><i></i><i></i><i></i><span>sulin1122.github.io</span></div><img src="./images/portfolio-preview-1265.webp" srcset="./images/portfolio-preview-640.webp 640w, ./images/portfolio-preview-1265.webp 1265w" sizes="(max-width: 760px) 80vw, 42vw" decoding="async" alt="个人作品集网站实际页面" loading="lazy" width="1265" height="791"></div><span class="cover-label">A LITTLE SPACE. A LOT OF IDEAS.</span></a><div class="project-caption"><div><h3><a href="./projects/personal-website.html">响应式个人作品集网站 <span aria-hidden="true">↗</span></a></h3><p>响应式作品集 · 交互动效 · 个人表达</p></div><span class="project-year">2026</span></div><p class="project-summary">用 HTML、CSS 与原生 JavaScript 搭建个人作品集，练习响应式布局、作品筛选与交互动效。案例记录页面结构、手机适配和实现取舍。</p><div class="project-actions"><a class="text-link" href="./projects/personal-website.html">阅读个人网站案例 ↗</a><a class="text-link" href="https://github.com/sulin1122/sulin1122.github.io" target="_blank" rel="noopener noreferrer">GitHub 源码 ↗</a></div></article>
+        <article class="project-card reveal" data-category="web" id="todo-project"><a class="project-cover cover-todo" href="./projects/javascript-todo.html" aria-label="查看交互待办清单详情"><span class="cover-topline">02 / DAILY FOCUS <span>↗</span></span><div class="todo-cover-heading">Make room<br>for <em>what matters.</em></div><div class="mini-todo"><div><span class="mini-check done">✓</span><span class="mini-done">从一个小想法开始</span><small>01</small></div><div><span class="mini-check"></span><span>把今天过得更有条理</span><small>02</small></div><div><span class="mini-check"></span><span>给好奇心留点时间</span><small>03</small></div><span class="mini-todo-footer">LESS NOISE. MORE FOCUS. <span>＋</span></span></div><span class="cover-label">JAVASCRIPT / A USEFUL LITTLE EXPERIMENT</span></a><div class="project-caption"><div><h3><a href="./projects/javascript-todo.html">JavaScript 待办清单 <span aria-hidden="true">↗</span></a></h3><p>交互待办清单 · 任务筛选 · 本地保存</p></div><span class="project-year">2026</span></div><p class="project-summary">一个支持任务分类、搜索、编辑和撤销删除的网页待办清单。使用 localStorage 在当前浏览器保存任务，刷新后可以继续安排今天。</p><div class="project-actions"><a class="text-link" href="./1.html">体验 JavaScript 待办清单 ↗</a><a class="text-link" href="./projects/javascript-todo.html">阅读待办清单案例 ↗</a></div></article>
+        <article class="project-card project-wide reveal" data-category="visual"><a class="project-cover cover-visual" href="./projects/visual-experiments.html" aria-label="查看视觉实验详情"><div><span class="cover-topline">03 / VISUAL PLAYGROUND</span><strong>PLAY IS<br><em>THE PROCESS.</em></strong><span class="cover-label">字体、色彩与一场关于想象力的实验。</span></div><div class="visual-star" aria-hidden="true">✳</div><span class="visual-open" aria-hidden="true">↗</span></a><div class="project-caption"><div><h3><a href="./projects/visual-experiments.html">网页视觉与动效实验 <span aria-hidden="true">↗</span></a></h3><p>原创 AI 辅助主视觉 · 字体与动态排版练习</p></div><span class="project-year">2026</span></div><p class="project-summary">探索字体、色彩与可暂停的环形作品墙。案例说明 AI 辅助人物视觉、排版参考素材，以及手机端横向滑动的交互设计。</p><div class="project-actions"><a class="text-link" href="./projects/visual-experiments.html">阅读视觉与动效案例 ↗</a></div></article>
       </div>
     </section>
     <section class="about" id="about" aria-labelledby="about-title">
       <div class="section-meta"><span>02 / THE PERSON BEHIND THE PIXELS</span><span>LEARNING. MAKING. REPEATING.</span></div>
-      <div class="about-layout"><div class="about-title-wrap reveal"><p class="eyebrow"><span class="live-dot"></span> 你好，我是苏林</p><h2 id="about-title">不停学习。<br>持续<span>创造。</span></h2><span class="about-asterisk" aria-hidden="true">✳</span></div><div class="about-copy reveal"><p class="about-lead">从第一行 HTML 开始，<br>把好奇心变成可以点击的东西。</p><p>这里记录我的前端学习：用 HTML 搭建结构，用 CSS 打磨视觉，再用 JavaScript 给页面一点生命力。个人主页和待办清单，是我把知识变成作品的练习。</p><p>我喜欢清晰的排版、恰到好处的动画，以及那些让人想多停留几秒的小细节。这个空间会和我一起，慢慢生长。</p><a class="text-link light-link" href="https://github.com/sulin1122" target="_blank" rel="noopener noreferrer">认识代码里的我 ↗</a></div></div>
-      <div class="skill-lab reveal"><div class="skill-tabs" role="tablist" aria-label="正在探索的技能"><button type="button" role="tab" id="skill-html" aria-selected="true" aria-controls="skill-panel" data-skill="html">HTML<span>01</span></button><button type="button" role="tab" id="skill-css" aria-selected="false" aria-controls="skill-panel" tabindex="-1" data-skill="css">CSS<span>02</span></button><button type="button" role="tab" id="skill-js" aria-selected="false" aria-controls="skill-panel" tabindex="-1" data-skill="js">JavaScript<span>03</span></button></div><div id="skill-panel" class="skill-panel" role="tabpanel" tabindex="0" aria-labelledby="skill-html"><span class="skill-icon" aria-hidden="true">&lt;/&gt;</span><div><h3>给内容一个清晰的骨架。</h3><p>练习语义化标签、分区导航和表单结构，让网页对人和搜索引擎都更容易理解。</p><span class="skill-tags">SEMANTIC HTML / ACCESSIBILITY / SEO BASICS</span></div></div></div>
+      <div class="about-layout"><div class="about-title-wrap reveal"><p class="eyebrow"><span class="live-dot"></span> 你好，我是苏林</p><h2 id="about-title">关于苏林。<br>学习<span>与实践。</span></h2><span class="about-asterisk" aria-hidden="true">✳</span></div><div class="about-copy reveal"><p class="about-lead">从第一行 HTML 开始，<br>把好奇心变成可以点击的东西。</p><p>这里记录我的前端学习：用 HTML 搭建结构，用 CSS 打磨视觉，再用 JavaScript 给页面一点生命力。个人主页和待办清单，是我把知识变成作品的练习。</p><p>我喜欢清晰的排版、恰到好处的动画，以及那些让人想多停留几秒的小细节。这个空间会和我一起，慢慢生长。</p><a class="text-link light-link" href="https://github.com/sulin1122" target="_blank" rel="noopener noreferrer">认识代码里的我 ↗</a></div></div>
+      <section class="skills-section" aria-labelledby="skills-title">
+        <h3 class="skills-heading" id="skills-title">我正在学习的前端技能</h3>
+        <div class="skill-lab reveal"><div class="skill-tabs" role="tablist" aria-label="正在探索的技能">
+          <button type="button" role="tab" id="skill-html" aria-selected="true" aria-controls="skill-panel-html" data-skill="html">HTML<span>01</span></button>
+          <button type="button" role="tab" id="skill-css" aria-selected="false" aria-controls="skill-panel-css" tabindex="-1" data-skill="css">CSS<span>02</span></button>
+          <button type="button" role="tab" id="skill-js" aria-selected="false" aria-controls="skill-panel-js" tabindex="-1" data-skill="js">JavaScript<span>03</span></button>
+        </div><div class="skill-panels">
+          <div id="skill-panel-html" class="skill-panel" role="tabpanel" tabindex="0" aria-labelledby="skill-html"><span class="skill-icon" aria-hidden="true">&lt;/&gt;</span><div><h4>HTML：为内容建立清楚的结构。</h4><p>在个人作品集中练习语义化标签、分区导航与真实链接，让作品介绍可以直接阅读与访问。</p><span class="skill-tags">SEMANTIC HTML / ACCESSIBILITY</span></div></div>
+          <div id="skill-panel-css" class="skill-panel" role="tabpanel" tabindex="0" aria-labelledby="skill-css"><span class="skill-icon" aria-hidden="true">{ }</span><div><h4>CSS：让布局适应不同屏幕。</h4><p>用 Flex、Grid 和媒体查询组织作品卡片，并结合字体、色彩与 transform 打磨响应式页面。</p><span class="skill-tags">RESPONSIVE LAYOUT / TYPOGRAPHY</span></div></div>
+          <div id="skill-panel-js" class="skill-panel" role="tabpanel" tabindex="0" aria-labelledby="skill-js"><span class="skill-icon" aria-hidden="true">JS</span><div><h4>JavaScript：把页面变成可用的工具。</h4><p>通过 DOM、事件监听与 localStorage，实现作品筛选、环形画廊，以及能在当前浏览器保存任务的待办清单。</p><span class="skill-tags">DOM / EVENTS / LOCAL STORAGE</span></div></div>
+        </div></div>
+      </section>
       <div class="process-row"><div class="reveal"><span>01 — LOOK CLOSER</span><h3>观察灵感</h3><p>留意好的排版与细节，思考它为什么有效。</p></div><div class="reveal"><span>02 — MAKE IT WORK</span><h3>动手实现</h3><p>从简单结构出发，把想法变成真实的页面。</p></div><div class="reveal"><span>03 — MAKE IT BETTER</span><h3>打磨体验</h3><p>在手机与电脑上检查，让交互更自然一点。</p></div></div>
     </section>
-    <section class="contact section-light" id="contact" aria-labelledby="contact-title"><div class="section-meta"><span>03 / KEEP THE CONVERSATION GOING</span><span>GOOD IDEAS START WITH HELLO.</span></div><div class="contact-content reveal"><p class="eyebrow">有想法，就来聊聊。</p><h2 id="contact-title">LET’S MAKE<br><em>SOMETHING.</em><span aria-hidden="true">↗</span></h2><div class="contact-bottom"><p>欢迎看看我的代码，分享你的建议，<br>或者一起交流有趣的网页与灵感。</p><div class="contact-actions"><a class="pill-button" href="https://github.com/sulin1122" target="_blank" rel="noopener noreferrer">在 GitHub 找到我 <span>↗</span></a><button class="pill-button pill-outline" type="button" id="copy-site">复制网站地址 <span>↗</span></button></div></div></div></section>
+    <section class="notes section-light" id="notes" aria-labelledby="notes-title">
+      <div class="section-meta"><span>03 / FRONT-END NOTES</span><span>LEARN BY MAKING.</span></div>
+      <div class="notes-heading"><p class="eyebrow">从作品出发，记录具体实现</p><h2 id="notes-title">前端实践笔记。</h2><p>把项目中的代码、选择与使用边界，整理成可以回看的学习记录。</p></div>
+      <div class="notes-grid"><article class="note-card"><p class="eyebrow">01 / JavaScript</p><h3><a href="./notes/localstorage-todo.html">JavaScript 待办清单如何用 localStorage 保存数据</a></h3><p>结合待办清单，记录任务保存、刷新恢复、数据校验与存储失败提示。</p><a class="text-link" href="./notes/localstorage-todo.html">阅读本地存储笔记 ↗</a></article><article class="note-card"><p class="eyebrow">02 / CSS Grid</p><h3><a href="./notes/responsive-grid.html">用 CSS Grid 实现手机与桌面自适应的作品列表</a></h3><p>从桌面两列到手机单列，记录 Grid 布局、跨列卡片与内容检查。</p><a class="text-link" href="./notes/responsive-grid.html">阅读响应式布局笔记 ↗</a></article><article class="note-card"><p class="eyebrow">03 / JavaScript</p><h3><a href="./notes/orbit-gallery.html">JavaScript 环形作品画廊：定位、旋转与暂停控制</a></h3><p>记录卡片定位、时间差旋转、暂停控制与手机横向滑动的实现。</p><a class="text-link" href="./notes/orbit-gallery.html">阅读环形画廊笔记 ↗</a></article></div>
+    </section>
+    <section class="contact section-light" id="contact" aria-labelledby="contact-title"><div class="section-meta"><span>04 / KEEP THE CONVERSATION GOING</span><span>GOOD IDEAS START WITH HELLO.</span></div><div class="contact-content reveal"><p class="eyebrow">有想法，就来聊聊。</p><h2 id="contact-title">和苏林交流<br><em>网页与灵感。</em><span aria-hidden="true">↗</span></h2><div class="contact-bottom"><p>欢迎看看我的代码，分享你的建议，<br>或者一起交流有趣的网页与灵感。</p><div class="contact-actions"><a class="pill-button" href="https://github.com/sulin1122" target="_blank" rel="noopener noreferrer">在 GitHub 找到我 <span>↗</span></a><button class="pill-button pill-outline" type="button" id="copy-site">复制网站地址 <span>↗</span></button></div></div></div></section>
   </main>
   <footer class="site-footer"><a class="wordmark" href="#top" aria-label="回到顶部">SU<span aria-hidden="true">✳</span>LIN</a><p>© <span id="year">2026</span> 苏林 · 用好奇心与代码构建</p><a href="#top" class="back-top">BACK TO TOP ↑</a></footer>
   <dialog class="case-dialog" id="case-dialog" aria-labelledby="case-title"><button class="dialog-close" type="button" aria-label="关闭项目详情">×</button><div id="case-content"></div></dialog>
