@@ -7,10 +7,10 @@
 - `index.html`：个人作品集首页。
 - `style.css`、`myScript.js`：首页版式、环形作品墙、作品筛选、项目快速预览、静态技能面板切换与动画控制。
 - `1.html`、`todo.css`、`todo.js`：待办清单，支持任务分类、搜索、完成状态筛选、编辑、本地保存及撤销删除。
-- `images/creative-hero.png`：原创男生 3D 概念主视觉。
-- `images/portfolio-preview.png`、`images/todo-preview.png`：新版页面的浏览器截图；待办预览使用演示任务。
+- `images/creative-hero-*.webp`：原创男生 3D 概念主视觉，提供多个宽度。
+- `images/portfolio-preview-*.webp`、`images/todo-preview-*.webp`：页面截图的 WebP 预览；待办预览使用演示任务。
 - `images/portfolio-social.png`：分享预览图。
-- `robots.txt`、`sitemap.xml`、`sitemap.txt`：爬取规则与站点地图。
+- `robots.txt`、`sitemap.xml`：爬取规则与 XML 站点地图。
 - `ASSETS.md`：视觉素材说明及生成提示词。
 
 ## 本地预览
@@ -50,4 +50,4 @@ python -m http.server 4174 --bind 127.0.0.1
 
 首页使用中文可见主标题、案例摘要、直接详情链接与实践笔记入口。每个详情页有独立标题、描述、canonical 和结构化数据；首页以 WebSite 与 Person/ProfilePage 统一站点名称。技能正文直接保存在 HTML 中，无脚本时仍可阅读。
 
-图片的多尺寸 WebP 副本按文件名宽度命名，例如 `creative-hero-640.webp`、`creative-hero-1100.webp` 和 `creative-hero-1672.webp`。首页通过 srcset/sizes 选择尺寸，首屏 preload 使用同一组候选；原始 PNG 保留供素材维护。新增页面时同步更新 XML 与文本两份站点地图。
+图片的多尺寸 WebP 副本按文件名宽度命名，例如 `creative-hero-640.webp`、`creative-hero-1100.webp` 和 `creative-hero-1672.webp`。首页通过 srcset/sizes 选择尺寸，首屏 preload 使用同一组候选；当前发布目录只保留页面引用的图片；源 PNG 与停用素材可从[清理前的版本](https://github.com/sulin1122/sulin1122.github.io/tree/ab8c934c78bf0dd6373149a35ef7daa3f8cdcd5d/images)恢复。新增页面时更新 `sitemap.xml`。
