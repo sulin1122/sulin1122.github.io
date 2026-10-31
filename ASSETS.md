@@ -2,7 +2,7 @@
 
 网站主视觉：`images/creative-hero-1672.webp`，同时提供 640px 和 1100px 宽度版本。使用内置 `image_gen` 工具生成，再以生成结果为输入将人物修改为男生。该人物为原创 AI 辅助概念角色，不是网站作者的真实肖像。
 
-`images/portfolio-preview-*.webp`、`images/todo-preview-*.webp` 为浏览器页面截图的多尺寸 WebP 版本；`images/portfolio-social.png` 用于社交分享。待办预览图中的任务仅用于演示。
+`images/portfolio-preview-*.webp`、`images/todo-preview-*.webp` 为浏览器页面截图的多尺寸 WebP 版本；`images/portfolio-social.jpg` 用于社交分享（旧 PNG 保留兼容已有链接）。待办预览图中的任务仅用于演示。
 
 `images/brochure-reference.webp` 和 `images/portfolio-reference.webp` 为网站原有的排版学习参考素材，画廊中明确标为参考资料，不作为原创项目署名。
 
@@ -19,3 +19,6 @@ Edit this website hero image: replace the female-looking character with a clearl
 ## 网页图片派生文件
 
 2026-10-30 从现有 PNG 生成多尺寸 WebP，用于首屏、作品封面与详情页。派生文件保留原有构图，文件名中的数字表示像素宽度。当前发布目录只保留使用中的版本；原始 PNG 与停用素材可从[清理前的版本](https://github.com/sulin1122/sulin1122.github.io/tree/ab8c934c78bf0dd6373149a35ef7daa3f8cdcd5d/images)恢复。`portfolio-preview` 的截图表现改版前的页面，详情页将其标为页面预览，不作为当前性能或搜索结果的证明。
+
+
+2026-10-31 从原始 PNG 重新编码已有多尺寸 WebP（质量 78、method 6），不改变构图或像素尺寸；分享预览图另生成 1200×630 渐进式 JPEG（质量 86），当前页面使用 JPEG，旧 PNG 仅作旧分享地址兼容。

@@ -9,7 +9,7 @@
 - `1.html`、`todo.css`、`todo.js`：待办清单，支持任务分类、搜索、完成状态筛选、编辑、本地保存及撤销删除。
 - `images/creative-hero-*.webp`：原创男生 3D 概念主视觉，提供多个宽度。
 - `images/portfolio-preview-*.webp`、`images/todo-preview-*.webp`：页面截图的 WebP 预览；待办预览使用演示任务。
-- `images/portfolio-social.png`：分享预览图。
+- `images/portfolio-social.jpg`：压缩后的分享预览图；旧 PNG 保留以兼容既有分享链接。
 - `robots.txt`、`sitemap.xml`：爬取规则与 XML 站点地图。
 - `ASSETS.md`：视觉素材说明及生成提示词。
 
@@ -51,3 +51,20 @@ python -m http.server 4174 --bind 127.0.0.1
 首页使用中文可见主标题、案例摘要、直接详情链接与实践笔记入口。每个详情页有独立标题、描述、canonical 和结构化数据；首页以 WebSite 与 Person/ProfilePage 统一站点名称。技能正文直接保存在 HTML 中，无脚本时仍可阅读。
 
 图片的多尺寸 WebP 副本按文件名宽度命名，例如 `creative-hero-640.webp`、`creative-hero-1100.webp` 和 `creative-hero-1672.webp`。首页通过 srcset/sizes 选择尺寸，首屏 preload 使用同一组候选；当前发布目录只保留页面引用的图片；源 PNG 与停用素材可从[清理前的版本](https://github.com/sulin1122/sulin1122.github.io/tree/ab8c934c78bf0dd6373149a35ef7daa3f8cdcd5d/images)恢复。新增页面时更新 `sitemap.xml`。
+
+
+## 资源加载与缓存
+
+首页将导航和首屏需要的 CSS 内联到 HTML，完整 `style.css` 通过 `media="print"` 与加载事件异步应用；禁用 JavaScript 时由 `noscript` 加载完整样式。`style.css` 仍是唯一的样式源文件，不要手工编辑生成的 `critical-css` 区块。
+
+修改 CSS、JavaScript 或图片后，在发布前运行（仅使用 Python 标准库）：
+
+```sh
+python tools/prepare_assets.py
+```
+
+该命令同步首页关键样式，并按资源内容的 SHA-256 前 12 位更新 HTML/脚本中的 `?v=` 参数。文件不变时地址保持稳定，资源变化后浏览器会请求新版本；它不会延长服务器返回的缓存时间。
+
+当前 GitHub Pages 的静态资源响应头为 `Cache-Control: max-age=600`。仓库无法配置自定义 HTTP 缓存头，因此 PageSpeed 的长期缓存建议可能继续显示。需要更长的 HTTP 缓存时间时，须在支持自定义响应头的托管或 CDN 上配置；本项目没有加入不生效的 `_headers` 或 `.htaccess`。
+
+2026-10-31 从原始 PNG 重新编码七张多尺寸 WebP（质量 78），保留原来的像素尺寸、响应式选择、首屏图片优先加载和非首屏懒加载。分享图使用 1200×630 的渐进式 JPEG；旧 PNG 只兼容旧地址，不由当前页面加载。

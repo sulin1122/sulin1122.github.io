@@ -57,6 +57,12 @@ function positionCards() {
 }
 positionCards();
 window.addEventListener('resize', positionCards, { passive: true });
+// Deferred CSS can change the gallery size after this script has initialized.
+if ('ResizeObserver' in window) {
+  new ResizeObserver(positionCards).observe(orbitStage);
+} else {
+  window.addEventListener('load', positionCards, { once: true });
+}
 orbitStage.addEventListener('pointerenter', () => { orbitHovered = true; });
 orbitStage.addEventListener('pointerleave', () => { orbitHovered = false; });
 orbitStage.addEventListener('focusin', () => { orbitFocused = true; });
@@ -104,10 +110,10 @@ $$('.skill-tabs [role=tab]').forEach((button, index, tabs) => {
   });
 });
 const cases = {
-  site: { image:'images/portfolio-preview-1265.webp', alt:'苏林个人网站页面预览', label:'01 / PERSONAL SPACE', title:'一个会慢慢生长的个人空间。', paragraphs:['这个网站记录我的前端学习和创意探索。从最初的个人介绍页面，逐渐加入响应式布局、作品展示和 JavaScript 交互。','这次让页面更有自己的性格：黑白对比的版式、环形作品墙、原创人物视觉，以及可以随时暂停的动态。希望每个访问这里的人，都能轻松找到作品与代码。'], tags:['HTML','CSS','JavaScript','响应式设计'], links:[{text:'阅读个人网站完整案例',url:'./projects/personal-website.html'},{text:'查看 GitHub 源码',url:'https://github.com/sulin1122/sulin1122.github.io',external:true}] },
-  todo: { image:'images/todo-preview-1280.webp', alt:'交互待办清单页面预览', label:'02 / DAILY FOCUS', title:'让注意力，回到真正重要的事。', paragraphs:['一个用原生 JavaScript 制作的任务清单。记录想做的事，标记每一步完成，把今天安排得更清楚一点。','支持任务分类、搜索、完成状态筛选、编辑与撤销删除。任务保存在当前浏览器，刷新后仍然可以继续。'], tags:['JavaScript','DOM 事件','本地存储','小工具'], links:[{text:'阅读待办清单完整案例',url:'./projects/javascript-todo.html'},{text:'打开待办清单',url:'./1.html'},{text:'查看页面源码',url:'https://github.com/sulin1122/sulin1122.github.io/blob/main/1.html',external:true}] },
-  visual: { image:'images/creative-hero-1672.webp', alt:'为本网站创作的原创红发 3D 人物', label:'03 / VISUAL PLAYGROUND', title:'认真玩，也是一种创作方式。', paragraphs:['一场关于字体、色彩与动态的视觉练习。红色、黑色与一点荧光绿，让严谨的代码也能拥有轻松、有趣的表达。','首屏人物是为本网站创作的 AI 辅助 3D 概念视觉，不是我的真实肖像。页面里的字体海报与动态排版，则用 HTML 和 CSS 实现。'], tags:['AI 辅助视觉','字体排版','动效探索'], links:[{text:'阅读视觉与动效完整案例',url:'./projects/visual-experiments.html'}] },
-  reference: { image:'images/brochure-reference.webp', alt:'宣传册排版参考素材', label:'LEARNING / REFERENCE MATERIAL', title:'从观察好的排版开始。', paragraphs:['这组素材沿用网站原有的宣传册与作品集封面参考，用于观察版面留白、图文关系和色彩搭配。','它们是学习参考素材，与上方可以体验的网页项目分开展示。把观察到的规律，变成自己的下一次尝试。'], tags:['参考素材','排版学习','视觉观察'], links:[] }
+  site: { image:'images/portfolio-preview-1265.webp?v=cded5beaceb4', alt:'苏林个人网站页面预览', label:'01 / PERSONAL SPACE', title:'一个会慢慢生长的个人空间。', paragraphs:['这个网站记录我的前端学习和创意探索。从最初的个人介绍页面，逐渐加入响应式布局、作品展示和 JavaScript 交互。','这次让页面更有自己的性格：黑白对比的版式、环形作品墙、原创人物视觉，以及可以随时暂停的动态。希望每个访问这里的人，都能轻松找到作品与代码。'], tags:['HTML','CSS','JavaScript','响应式设计'], links:[{text:'阅读个人网站完整案例',url:'./projects/personal-website.html'},{text:'查看 GitHub 源码',url:'https://github.com/sulin1122/sulin1122.github.io',external:true}] },
+  todo: { image:'images/todo-preview-1280.webp?v=4732c87ac397', alt:'交互待办清单页面预览', label:'02 / DAILY FOCUS', title:'让注意力，回到真正重要的事。', paragraphs:['一个用原生 JavaScript 制作的任务清单。记录想做的事，标记每一步完成，把今天安排得更清楚一点。','支持任务分类、搜索、完成状态筛选、编辑与撤销删除。任务保存在当前浏览器，刷新后仍然可以继续。'], tags:['JavaScript','DOM 事件','本地存储','小工具'], links:[{text:'阅读待办清单完整案例',url:'./projects/javascript-todo.html'},{text:'打开待办清单',url:'./1.html'},{text:'查看页面源码',url:'https://github.com/sulin1122/sulin1122.github.io/blob/main/1.html',external:true}] },
+  visual: { image:'images/creative-hero-1672.webp?v=e760d2fa855b', alt:'为本网站创作的原创红发 3D 人物', label:'03 / VISUAL PLAYGROUND', title:'认真玩，也是一种创作方式。', paragraphs:['一场关于字体、色彩与动态的视觉练习。红色、黑色与一点荧光绿，让严谨的代码也能拥有轻松、有趣的表达。','首屏人物是为本网站创作的 AI 辅助 3D 概念视觉，不是我的真实肖像。页面里的字体海报与动态排版，则用 HTML 和 CSS 实现。'], tags:['AI 辅助视觉','字体排版','动效探索'], links:[{text:'阅读视觉与动效完整案例',url:'./projects/visual-experiments.html'}] },
+  reference: { image:'images/brochure-reference.webp?v=d7da3b7a4c12', alt:'宣传册排版参考素材', label:'LEARNING / REFERENCE MATERIAL', title:'从观察好的排版开始。', paragraphs:['这组素材沿用网站原有的宣传册与作品集封面参考，用于观察版面留白、图文关系和色彩搭配。','它们是学习参考素材，与上方可以体验的网页项目分开展示。把观察到的规律，变成自己的下一次尝试。'], tags:['参考素材','排版学习','视觉观察'], links:[] }
 };
 const dialog = $('#case-dialog');
 let dialogTrigger;
