@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLE38F0XRY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JLE38F0XRY');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用原生 JavaScript 做待办清单｜添加、勾选与删除｜苏林 SULIN</title>
+  <meta name="description" content="从零用原生 JavaScript 做待办清单。跟着 HTML 和 JavaScript 完整示例，练习表单事件、添加任务、勾选完成与删除，并在本地运行验证。">
+  <meta name="author" content="苏林">
+  <link rel="canonical" href="https://sulin1122.github.io/notes/todo-javascript-tutorial.html">
+  <link rel="icon" href="../images/logo.svg?v=5bea958b91cd" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css?v=8bbcf81579ea">
+  <link rel="stylesheet" href="../content.css?v=1cba977e05fc">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="苏林 SULIN">
+  <meta property="og:title" content="用原生 JavaScript 做待办清单｜添加、勾选与删除｜苏林 SULIN">
+  <meta property="og:description" content="从零用原生 JavaScript 做待办清单。跟着 HTML 和 JavaScript 完整示例，练习表单事件、添加任务、勾选完成与删除，并在本地运行验证。">
+  <meta property="og:url" content="https://sulin1122.github.io/notes/todo-javascript-tutorial.html">
+  <meta property="og:image" content="https://sulin1122.github.io/images/todo-preview-1280.webp?v=4732c87ac397">
+  <meta property="og:image:alt" content="完整待办清单的添加、勾选和删除操作界面">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="用原生 JavaScript 做待办清单｜添加、勾选与删除｜苏林 SULIN">
+  <meta name="twitter:description" content="从零用原生 JavaScript 做待办清单。跟着 HTML 和 JavaScript 完整示例，练习表单事件、添加任务、勾选完成与删除，并在本地运行验证。">
+  <meta name="twitter:image" content="https://sulin1122.github.io/images/todo-preview-1280.webp?v=4732c87ac397">
+  <meta name="twitter:image:alt" content="完整待办清单的添加、勾选和删除操作界面">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "用原生 JavaScript 做待办清单｜添加、勾选与删除",
+      "description": "从零用原生 JavaScript 做待办清单。跟着 HTML 和 JavaScript 完整示例，练习表单事件、添加任务、勾选完成与删除，并在本地运行验证。",
+      "url": "https://sulin1122.github.io/notes/todo-javascript-tutorial.html",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@type": "Person",
+        "@id": "https://sulin1122.github.io/#person",
+        "name": "苏林",
+        "url": "https://sulin1122.github.io/"
+      },
+      "@id": "https://sulin1122.github.io/notes/todo-javascript-tutorial.html#article",
+      "name": "用原生 JavaScript 做待办清单｜添加、勾选与删除",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sulin1122.github.io/notes/todo-javascript-tutorial.html"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://sulin1122.github.io/#website"
+      },
+      "datePublished": "2026-11-14",
+      "dateModified": "2026-11-14",
+      "image": "https://sulin1122.github.io/images/todo-preview-1280.webp"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "苏林 SULIN",
+          "item": "https://sulin1122.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "实践笔记",
+          "item": "https://sulin1122.github.io/#notes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "用原生 JavaScript 做待办清单｜添加、勾选与删除",
+          "item": "https://sulin1122.github.io/notes/todo-javascript-tutorial.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="content-page" id="top">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header article-header">
+    <a class="wordmark" href="../" aria-label="苏林 SULIN 首页">SU<span class="logo-star" aria-hidden="true">✳</span>LIN<span class="wordmark-cn">苏林</span></a>
+    <nav class="article-nav" aria-label="主要导航">
+      <a href="../#projects">精选作品</a>
+      <a href="../#notes">实践笔记</a>
+      <a href="../#about">关于苏林</a>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="article-heading">
+        <nav class="breadcrumbs" aria-label="当前位置">
+          <ol><li><a href="../">首页</a></li><li><a href="../#notes">实践笔记</a></li><li aria-current="page">用原生 JavaScript 做待办清单｜添加、勾选与删除</li></ol>
+        </nav>
+        <h1>用原生 JavaScript 做待办清单｜添加、勾选与删除</h1>
+        <p class="article-lead">从一个每天能用的小工具入手，练习 JavaScript 的 DOM 和事件。做完后，你可以添加任务、勾选完成和删除任务。</p>
+        <div class="article-meta"><span>苏林 SULIN</span><span>待办清单教程</span><time datetime="2026-11-14">2026-11-14</time></div>
+        <div class="article-tags"><span>JavaScript</span><span>DOM</span><span>待办清单</span></div>
+        <a class="pill-button" href="../1.html">体验完整待办清单 ↗</a>
+      </header>
+      <div class="article-layout">
+        <aside class="article-toc">
+          <nav aria-label="本页目录">
+            <p>本页内容</p>
+            <ol><li><a href="#html">搭出输入框和列表</a></li><li><a href="#javascript">用数组记录任务，再更新列表</a></li><li><a href="#try-it">打开页面做一次检查</a></li></ol>
+          </nav>
+        </aside>
+        <div class="article-body">
+          <section id="html">
+            <h2>搭出输入框和列表</h2>
+<p>新建一个练习文件夹，里面放 <code>index.html</code> 和 <code>todo.js</code>。先把下面的代码写入 <code>index.html</code>。</p>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;我的待办清单&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;我的待办清单&lt;/h1&gt;
+  &lt;form id=&quot;task-form&quot;&gt;
+    &lt;label for=&quot;task-text&quot;&gt;新任务&lt;/label&gt;
+    &lt;input id=&quot;task-text&quot; required&gt;
+    &lt;button type=&quot;submit&quot;&gt;添加&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;ul id=&quot;task-list&quot;&gt;&lt;/ul&gt;
+  &lt;script src=&quot;./todo.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>表单接收输入，<code>ul</code> 展示任务。按回车和点击「添加」都会触发表单的 <code>submit</code> 事件。</p>
+          </section>
+          <section id="javascript">
+            <h2>用数组记录任务，再更新列表</h2>
+<p>每条任务用三个字段表示。<code>id</code> 是唯一编号，<code>text</code> 是任务文字，<code>done</code> 记录是否完成。即使两条任务都叫「整理笔记」，删除时也可以靠编号选中正确的一条。</p>
+<p>把下面的代码写入 <code>todo.js</code>。</p>
+<pre><code class="language-javascript">const form = document.querySelector('#task-form');
+const input = document.querySelector('#task-text');
+const list = document.querySelector('#task-list');
+
+let tasks = [];
+
+function updateTasks(nextTasks) {
+  tasks = nextTasks;
+  render();
+}
+
+function render() {
+  const rows = tasks.map(task =&gt; {
+    const row = document.createElement('li');
+    const label = document.createElement('label');
+    const checkbox = document.createElement('input');
+    const text = document.createElement('span');
+    const remove = document.createElement('button');
+
+    checkbox.type = 'checkbox';
+    checkbox.checked = task.done;
+    text.textContent = task.text;
+
+    checkbox.addEventListener('change', () =&gt; {
+      updateTasks(tasks.map(item =&gt; item.id === task.id
+        ? { ...item, done: checkbox.checked }
+        : item));
+    });
+
+    remove.type = 'button';
+    remove.textContent = '删除';
+    remove.setAttribute('aria-label', '删除任务 ' + task.text);
+    remove.addEventListener('click', () =&gt; {
+      updateTasks(tasks.filter(item =&gt; item.id !== task.id));
+    });
+
+    label.append(checkbox, text);
+    row.append(label, remove);
+    return row;
+  });
+
+  list.replaceChildren(...rows);
+}
+
+form.addEventListener('submit', event =&gt; {
+  event.preventDefault();
+  const text = input.value.trim();
+  if (!text) return;
+
+  updateTasks([...tasks, { id: crypto.randomUUID(), text, done: false }]);
+  input.value = '';
+  input.focus();
+});
+
+render();</code></pre>
+<p>完整项目的分类、搜索和撤销逻辑，可以对照 <a href="../projects/javascript-todo.html">待办清单项目案例</a>。练习里的三种操作都调用 <code>updateTasks()</code>。添加时把新任务放进数组，勾选时更新对应任务的 <code>done</code>，删除时过滤掉对应的 <code>id</code>。<code>render()</code> 根据数组重建列表。任务文字用 <code>textContent</code> 写入，所以输入 <code>&lt;b&gt;整理笔记&lt;/b&gt;</code> 会原样显示为文字。</p>
+          </section>
+          <section id="try-it">
+            <h2>打开页面做一次检查</h2>
+<p>用 VS Code 的本地预览打开页面。电脑上有 Python 的话，也可以在练习文件夹的终端执行下面的命令，再访问 <code>http://127.0.0.1:8000/</code>。</p>
+<pre><code class="language-shell">python -m http.server 8000 --bind 127.0.0.1</code></pre>
+<ol><li>添加「阅读文章」和「整理笔记」。</li><li>勾选第一条，再删除第二条。应只留下已勾选的「阅读文章」。</li><li>输入几个空格并提交，列表应保持原样。</li></ol>
+<p>刷新后清单会变空，因为每次加载脚本都会重新执行 <code>let tasks = []</code>。接着用 <a href="./localstorage-todo.html">localStorage 保存任务并在刷新后恢复</a>，把这个小工具变成实际能用的清单。</p>
+          </section>
+        </div>
+      </div>
+    </article>
+    <section class="related-section" aria-labelledby="related-title">
+      <h2 id="related-title">继续阅读</h2>
+      <div class="related-grid">
+        <a class="related-card" href="localstorage-todo.html"><span>下一篇</span><h3>待办清单刷新后消失？用 localStorage 保存任务</h3></a>
+        <a class="related-card" href="../projects/javascript-todo.html"><span>项目案例</span><h3>查看完整待办清单的实现</h3></a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a class="wordmark" href="../">SU<span aria-hidden="true">✳</span>LIN</a>
+    <p>© 2026 苏林</p>
+    <a href="#top" class="back-top">回到顶部 ↑</a>
+  </footer>
+</body>
+</html>
